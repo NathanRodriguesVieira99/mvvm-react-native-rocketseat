@@ -1,12 +1,19 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { registerSchema, type RegisterSchema } from "./register.schema";
-import { useRegisterMutation } from "@shared/mutations/auth/useRegister.mutation";
 import { useUserStore } from "@shared/store/user.store";
+import { useMutation } from "@tanstack/react-query";
+import type { RegisterServiceProps } from "@services/auth.service";
+import type { RegisterHttpParams } from "@shared/interfaces/http/register";
 
-export const useRegisterModel = () => {
-  const { userRegisterMutation } = useRegisterMutation();
-  const { setSession, user } = useUserStore();
+type useRegisterModelProps = {
+  registerService: RegisterServiceProps;
+};
+
+export const useRegisterModel = ({
+  registerService,
+}: useRegisterModelProps) => {
+  const { setSession } = useUserStore();
 
   const {
     register,
@@ -23,6 +30,12 @@ export const useRegisterModel = () => {
       password: "",
       confirm_password: "",
     },
+  });
+
+  const { mutateAsync: userRegisterMutation } = useMutation({
+    mutationFn: (body: RegisterHttpParams) => registerService.exec(body),
+    onSuccess: (response) => console.log(response),
+    onError: (err) => console.error(err),
   });
 
   const onSubmit = handleSubmit(async (data) => {
