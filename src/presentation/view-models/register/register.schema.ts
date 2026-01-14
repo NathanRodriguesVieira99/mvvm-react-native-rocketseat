@@ -11,8 +11,8 @@ export const registerSchema = z
       .min(MIN_NAME_LENGTH, { message: "Nome deve ter ao menos 4 caracteres" }),
     email: z
       .string()
-      .email({ message: "E-mail inválido" })
-      .nonempty({ message: "E-mail é obrigatório" }),
+      .nonempty({ message: "E-mail é obrigatório" })
+      .email({ message: "E-mail inválido" }),
     password: z
       .string()
       .nonempty({ message: "Senha é obrigatória" })
