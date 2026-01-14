@@ -4,11 +4,11 @@ import type {
   RegisterHttpResponse,
 } from "@shared/interfaces/http/register";
 
-export type RegisterServiceProps = {
+export type RegisterServiceContract = {
   exec: (data: RegisterHttpParams) => Promise<RegisterHttpResponse>;
 };
 
-export class RegisterService implements RegisterServiceProps {
+export class RegisterService implements RegisterServiceContract {
   constructor(private readonly http: IHttpClient) {}
 
   async exec(body: RegisterHttpParams) {
