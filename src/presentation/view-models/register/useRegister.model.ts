@@ -3,11 +3,11 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { registerSchema, type RegisterSchema } from "./register.schema";
 import { useUserStore } from "@shared/store/user.store";
 import { useMutation } from "@tanstack/react-query";
-import type { RegisterServiceProps } from "@services/auth.service";
+import type { RegisterServiceContract } from "@services/auth.service";
 import type { RegisterHttpParams } from "@shared/interfaces/http/register";
 
 type useRegisterModelProps = {
-  registerService: RegisterServiceProps;
+  registerService: RegisterServiceContract;
 };
 
 export const useRegisterModel = ({
