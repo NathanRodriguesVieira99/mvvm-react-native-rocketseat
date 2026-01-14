@@ -1,14 +1,24 @@
+import { HttpMethod, type IHttpClient } from "@api/http-client.types";
 import type {
   RegisterHttpParams,
   RegisterHttpResponse,
-} from "../../shared/interfaces/http/register";
-import { marketPlaceApiClient } from "@api/market-place";
+} from "@shared/interfaces/http/register";
 
-export const register = async (body: RegisterHttpParams) => {
-  const { data } = await marketPlaceApiClient.post<RegisterHttpResponse>(
-    "/auth/register",
-    body
-  );
-
-  return data;
+export type RegisterServiceProps = {
+  exec: (data: RegisterHttpParams) => Promise<RegisterHttpResponse>;
 };
+
+export class RegisterService implements RegisterServiceProps {
+  constructor(private readonly http: IHttpClient) {}
+
+  async exec(body: RegisterHttpParams) {
+    const registerServiceResponse =
+      await this.http.request<RegisterHttpResponse>({
+        method: HttpMethod.POST,
+        endpoint: "/auth/register",
+        body,
+      });
+
+    return registerServiceResponse;
+  }
+}
