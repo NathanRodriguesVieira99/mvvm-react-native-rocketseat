@@ -1,13 +1,12 @@
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { registerSchema, type RegisterSchema } from "./register.schema";
-import { useUserStore } from "@shared/store/user.store";
-import { useMutation } from "@tanstack/react-query";
-import type { RegisterServiceContract } from "@services/auth.service";
-import type { RegisterHttpParams } from "@shared/interfaces/http/register";
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { registerSchema, type RegisterSchema } from './register.schema';
+import type { RegisterService } from '@services/register.service';
+import { useRegisterMutation } from '@shared/mutations/useRegister.mutation';
+import { useUserStore } from '@shared/store/user.store';
 
 type useRegisterModelProps = {
-  registerService: RegisterServiceContract;
+  registerService: RegisterService;
 };
 
 export const useRegisterModel = ({
@@ -24,24 +23,20 @@ export const useRegisterModel = ({
   } = useForm<RegisterSchema>({
     resolver: zodResolver(registerSchema),
     defaultValues: {
-      name: "",
-      email: "",
-      phone: "",
-      password: "",
-      confirm_password: "",
+      name: '',
+      email: '',
+      phone: '',
+      password: '',
+      confirm_password: '',
     },
   });
 
-  const { mutateAsync: userRegisterMutation } = useMutation({
-    mutationFn: (body: RegisterHttpParams) => registerService.exec(body),
-    onSuccess: (response) => console.log(response),
-    onError: (err) => console.error(err),
-  });
+  const { mutateAsync: userRegisterMutation } =
+    useRegisterMutation(registerService);
 
   const onSubmit = handleSubmit(async (data) => {
     const { confirm_password, ...registerData } = data;
     const mutationResponse = await userRegisterMutation(registerData);
-    reset();
 
     setSession({
       refreshToken: mutationResponse.refreshToken,
