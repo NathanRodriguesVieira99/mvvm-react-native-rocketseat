@@ -1,7 +1,7 @@
-import { Stack } from "expo-router";
-import { QueryClientProvider } from "@tanstack/react-query";
-import "../styles/global.css";
-import { client } from "../lib/react-query";
+import { Stack } from 'expo-router';
+import { QueryClientProvider } from '@tanstack/react-query';
+import '../styles/global.css';
+import { client } from '../lib/react-query';
 
 export default function RootLayout() {
   return (

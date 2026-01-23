@@ -1,6 +1,6 @@
-import { useRef, useState } from "react";
-import type { BlurEvent, FocusEvent, TextInput } from "react-native";
-import { colors } from "../../../styles/colors";
+import { useRef, useState } from 'react';
+import type { BlurEvent, FocusEvent, TextInput } from 'react-native';
+import { colors } from '../../../styles/colors';
 
 interface useInputModelProps {
   isError?: boolean;
@@ -25,7 +25,7 @@ export const useInputModel = ({
   onChangeText,
   value,
 }: useInputModelProps) => {
- const [showPassword, setShowPassword] = useState(secureTextEntry);
+  const [showPassword, setShowPassword] = useState(secureTextEntry);
   const [isFocused, setIsFocused] = useState(false);
   const inputRef = useRef<TextInput>(null);
 
@@ -45,14 +45,14 @@ export const useInputModel = ({
 
   const getIconColor = () => {
     if (isError) return colors.danger;
-    if (isFocused) return colors["purple-base"];
-    if (value) return colors["purple-base"];
+    if (isFocused) return colors['purple-base'];
+    if (value) return colors['purple-base'];
     return colors.gray[200];
   };
 
   const handleTextChange = (text: string) => {
     if (mask) {
-      onChangeText?.(mask(text) || "");
+      onChangeText?.(mask(text) || '');
     } else {
       onChangeText?.(text);
     }

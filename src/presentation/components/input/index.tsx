@@ -5,11 +5,11 @@ import {
   TouchableOpacity,
   View,
   type TextInputProps,
-} from "react-native";
-import { inputVariants, type InputVariantsProps } from "./variants";
-import { Ionicons } from "@expo/vector-icons";
-import type { FC } from "react";
-import { useInputModel } from "./useInput.model";
+} from 'react-native';
+import { inputVariants, type InputVariantsProps } from './variants';
+import { Ionicons } from '@expo/vector-icons';
+import type { FC } from 'react';
+import { useInputModel } from './useInput.model';
 
 export interface InputProps extends TextInputProps, InputVariantsProps {
   label?: string;
@@ -87,7 +87,7 @@ export const Input: FC<InputProps> = ({
         {secureTextEntry && (
           <TouchableOpacity activeOpacity={0.7} onPress={handlePasswordToggle}>
             <Ionicons
-              name={showPassword ? "eye-outline" : "eye-off-outline"}
+              name={showPassword ? 'eye-outline' : 'eye-off-outline'}
               size={22}
             />
           </TouchableOpacity>

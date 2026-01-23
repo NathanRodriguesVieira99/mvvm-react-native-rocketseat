@@ -1,11 +1,11 @@
-import axios, { type AxiosError, type AxiosInstance } from "axios";
-import { Platform } from "react-native";
+import axios, { type AxiosError, type AxiosInstance } from 'axios';
+import { Platform } from 'react-native';
 import {
   ANDROID_API_BASE_URL,
   INTERNAL_SERVER_ERROR,
   IOS_API_BASE_URL,
-} from "@shared/constants";
-import type { HttpRequest, IHttpClient } from "./http-client.types";
+} from '@shared/constants';
+import type { HttpRequest, IHttpClient } from './http-client.types';
 
 const getBaseUrl = () => {
   return Platform.select({

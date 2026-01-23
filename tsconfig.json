@@ -5,7 +5,7 @@
     "paths": {
       "@shared/*": ["./src/shared/*"],
       "@api/*": ["./src/api/*"],
-      "@services/*": ["./src/domain/services/*"],
+      "@services/*": ["./src/domain/services/*"]
     }
   }
 }

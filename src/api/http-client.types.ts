@@ -1,9 +1,9 @@
 export enum HttpMethod {
-  GET = "get",
-  POST = "post",
-  PUT = "put",
-  PATCH = "patch",
-  DELETE = "delete",
+  GET = 'get',
+  POST = 'post',
+  PUT = 'put',
+  PATCH = 'patch',
+  DELETE = 'delete',
 }
 
 export type HttpRequest<TBody> = {
@@ -15,6 +15,6 @@ export type HttpRequest<TBody> = {
 
 export type IHttpClient = {
   request: <TResponse, TBody = unknown>(
-    request: HttpRequest<TBody>
+    request: HttpRequest<TBody>,
   ) => Promise<TResponse>;
 };

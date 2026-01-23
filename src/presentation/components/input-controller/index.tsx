@@ -4,12 +4,12 @@ import {
   type FieldErrors,
   type FieldValues,
   type Path,
-} from "react-hook-form";
-import { Input, type InputProps } from "../input";
+} from 'react-hook-form';
+import { Input, type InputProps } from '../input';
 
 interface InputControllerProps<T extends FieldValues> extends Omit<
   InputProps,
-  "value" | "onChangeText" | "error"
+  'value' | 'onChangeText' | 'error'
 > {
   control: Control<T>;
   name: Path<T>;

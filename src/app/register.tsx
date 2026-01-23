@@ -1,7 +1,7 @@
-import { HttpClient } from "@api/http-client";
-import { RegisterView } from "../presentation/view-models/register/register.view";
-import { useRegisterModel } from "../presentation/view-models/register/useRegister.model";
-import { RegisterService } from "@services/auth.service";
+import { HttpClient } from '@api/http-client';
+import { RegisterView } from '../presentation/view-models/register/register.view';
+import { useRegisterModel } from '../presentation/view-models/register/useRegister.model';
+import { RegisterService } from '@services/register.service';
 
 export default function Register() {
   const http = HttpClient.create();
