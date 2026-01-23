@@ -1,13 +1,14 @@
-import { Text, TouchableOpacity, View } from "react-native";
-import { router } from "expo-router";
+import { HttpClient } from '@api/http-client';
+import { LoginView } from '../presentation/view-models/login/login.view';
+import { useLoginModel } from '../presentation/view-models/login/useLogin.model';
+import { LoginService } from '@services/login.service';
 
 export default function Login() {
-  return (
-    <View className="flex-1 items-center justify-center">
-      <Text>Login</Text>
-      <TouchableOpacity onPress={() => router.push("register")}>
-        <Text>Registro</Text>
-      </TouchableOpacity>
-    </View>
-  );
+  const http = HttpClient.create();
+
+  const loginService = new LoginService(http);
+
+  const props = useLoginModel({ loginService });
+
+  return <LoginView {...props} />;
 }
