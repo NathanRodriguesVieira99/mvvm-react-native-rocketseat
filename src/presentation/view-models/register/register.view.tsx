@@ -1,11 +1,12 @@
 import { type FC } from 'react';
-import { ScrollView, Text, TouchableOpacity } from 'react-native';
+import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import type { useRegisterModel } from './useRegister.model';
 import { InputController } from '../../components/input-controller';
 import { AuthFormHeader } from '../../components/auth-form-header';
 import { router } from 'expo-router';
 import { KeyboardContainer } from '../../components/keyboard-container';
 import { colors } from '../../../styles/colors';
+import { Button } from '../../components/button';
 
 export const RegisterView: FC<ReturnType<typeof useRegisterModel>> = ({
   onSubmit,
@@ -68,13 +69,19 @@ export const RegisterView: FC<ReturnType<typeof useRegisterModel>> = ({
           secureTextEntry
         />
 
-        <TouchableOpacity onPress={onSubmit}>
-          <Text>Registrar</Text>
-        </TouchableOpacity>
+        <Button className="mt-6" onPress={onSubmit}>
+          Registrar
+        </Button>
 
-        <TouchableOpacity onPress={() => router.push('login')}>
-          <Text>Login</Text>
-        </TouchableOpacity>
+        <View className="mt-16">
+          <Text className="text-base text-gray-300 mb-6">
+            Já possui uma conta?
+          </Text>
+
+          <Button variant="outlined" onPress={() => router.push('login')}>
+            Login
+          </Button>
+        </View>
       </ScrollView>
     </KeyboardContainer>
   );
