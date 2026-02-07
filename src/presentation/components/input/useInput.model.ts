@@ -14,6 +14,14 @@ interface useInputModelProps {
   value?: string;
 }
 
+interface InitialStates {
+  isFocused: boolean;
+}
+
+const initialStates: InitialStates = {
+  isFocused: false,
+};
+
 export const useInputModel = ({
   isError,
   isDisabled,
@@ -26,7 +34,7 @@ export const useInputModel = ({
   value,
 }: useInputModelProps) => {
   const [showPassword, setShowPassword] = useState(secureTextEntry);
-  const [isFocused, setIsFocused] = useState(false);
+  const [isFocused, setIsFocused] = useState(initialStates.isFocused);
   const inputRef = useRef<TextInput>(null);
 
   const handlePasswordToggle = () => setShowPassword((prev) => !prev);
