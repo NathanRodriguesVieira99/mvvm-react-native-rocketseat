@@ -4,7 +4,7 @@ import { useUserStore } from '@shared/store/user.store';
 import { useMutation } from '@tanstack/react-query';
 
 export const useLoginMutation = (loginService: LoginService) => {
-  const { setSession } = useUserStore();
+  const setSession = useUserStore((state) => state.setSession);
 
   return useMutation({
     mutationFn: (body: LoginHttpParams) => loginService.exec(body),
