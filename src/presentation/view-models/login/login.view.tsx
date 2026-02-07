@@ -1,22 +1,21 @@
-import { Text, TouchableOpacity, View } from 'react-native';
-import { AuthFormHeader } from '../../components/auth-form-header';
+import { Text, View } from 'react-native';
 import { router } from 'expo-router';
-import { KeyboardContainer } from '../../components/keyboard-container';
 import type { FC } from 'react';
 import type { useLoginModel } from './useLogin.model';
 import { InputController } from '../../components/input-controller';
 import { colors } from '../../../styles/colors';
 import { Button } from '../../components/button';
+import { Login } from '.';
 
 export const LoginView: FC<ReturnType<typeof useLoginModel>> = ({
   control,
   onSubmit,
 }) => {
   return (
-    <KeyboardContainer>
+    <Login.KeyboardContainer>
       <View className="flex-1 px-[40px] items-center justify-center">
         <View className="flex-1 w-full items-center justify-center">
-          <AuthFormHeader
+          <Login.Header
             title="Acesse sua conta"
             subtitle="Informe seu e-mail e senha para entrar"
           />
@@ -26,7 +25,7 @@ export const LoginView: FC<ReturnType<typeof useLoginModel>> = ({
             name="email"
             label="E-MAIL"
             leftIcon="mail-outline"
-            placeholder="mail@example.com.br"
+            placeholder="email@example.com.br"
             placeholderTextColor={colors.gray[200]}
           />
 
@@ -57,12 +56,12 @@ export const LoginView: FC<ReturnType<typeof useLoginModel>> = ({
           <Button
             variant="outlined"
             rightIcon="arrow-forward"
-            onPress={() => router.push('/register')}
+            onPress={() => router.push('/(public)/register')}
           >
             Registrar
           </Button>
         </View>
       </View>
-    </KeyboardContainer>
+    </Login.KeyboardContainer>
   );
 };
