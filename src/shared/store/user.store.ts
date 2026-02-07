@@ -14,15 +14,20 @@ interface UpdateTokensParams {
   refreshToken: string;
 }
 
-export interface UserStore {
+interface UserStates {
   user: User | null;
   token: string | null;
   refreshToken: string | null;
+}
 
+interface UserActions {
   setSession: (sessionData: SetSessionParams) => void;
   logout: () => void;
   updateTokens: (updateTokensData: UpdateTokensParams) => void;
+  updateUser: (updatedUserData: Partial<User>) => void; // Partial<> -> Torna todos os campos da tipagem opcionais
 }
+
+export type UserStore = UserActions & UserStates;
 
 export const useUserStore = create<UserStore>()(
   persist(
@@ -39,6 +44,10 @@ export const useUserStore = create<UserStore>()(
         }),
       setSession: (sessionData) => set({ ...sessionData }),
       updateTokens: (updateTokensData) => set({ ...updateTokensData }),
+      updateUser: (updatedUserData) =>
+        set((state) => ({
+          user: state.user ? { ...state.user, ...updatedUserData } : null,
+        })),
     }),
     {
       name: 'marketplace-auth',
