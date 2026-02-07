@@ -1,24 +1,40 @@
 import { type FC } from 'react';
-import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import { Image, ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import type { useRegisterModel } from './useRegister.model';
 import { InputController } from '../../components/input-controller';
-import { AuthFormHeader } from '../../components/auth-form-header';
 import { router } from 'expo-router';
-import { KeyboardContainer } from '../../components/keyboard-container';
 import { colors } from '../../../styles/colors';
 import { Button } from '../../components/button';
+import { Ionicons } from '@expo/vector-icons';
+import { Register } from '.';
 
 export const RegisterView: FC<ReturnType<typeof useRegisterModel>> = ({
   onSubmit,
   control,
+  handleSelectAvatar,
+  avatarUri,
 }) => {
   return (
-    <KeyboardContainer>
+    <Register.KeyboardContainer>
       <ScrollView className="flex-1 px-[40px]">
-        <AuthFormHeader
+        <Register.Header
           title="Crie sua conta"
           subtitle="Informe os seus dados pessoais e de acesso"
         />
+        <TouchableOpacity
+          className="h-[120px] w-[120px] self-center rounded-xl mb-8 bg-shape items-center justify-center"
+          onPress={handleSelectAvatar}
+        >
+          {avatarUri ? (
+            <Image
+              className="w-full h-full rounded-xl"
+              resizeMode="cover"
+              source={{ uri: avatarUri }}
+            />
+          ) : (
+            <Ionicons name="cloud-upload-outline" size={32} />
+          )}
+        </TouchableOpacity>
 
         <InputController
           name="name"
@@ -78,11 +94,14 @@ export const RegisterView: FC<ReturnType<typeof useRegisterModel>> = ({
             Já possui uma conta?
           </Text>
 
-          <Button variant="outlined" onPress={() => router.push('login')}>
+          <Button
+            variant="outlined"
+            onPress={() => router.push('/(public)/login')}
+          >
             Login
           </Button>
         </View>
       </ScrollView>
-    </KeyboardContainer>
+    </Register.KeyboardContainer>
   );
 };
