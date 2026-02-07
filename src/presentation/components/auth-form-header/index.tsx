@@ -1,5 +1,7 @@
 import type { FC } from 'react';
-import { Image, Text, View } from 'react-native';
+import { Image, View } from 'react-native';
+import { Title } from './components/title';
+import { Subtitle } from './components/subtitle';
 
 interface AuthFormHeaderProps {
   title: string;
@@ -17,8 +19,8 @@ export const AuthFormHeader: FC<AuthFormHeaderProps> = ({
         resizeMode="contain"
         className="w-[80px] h-[60px] mb-8"
       />
-      <Text className="text-3xl font-bold mb-3 text-gray-500">{title}</Text>
-      <Text className="text-base text-gray-300">{subtitle}</Text>
+      <Title title={title} />
+      <Subtitle subtitle={subtitle} />
     </View>
   );
 };
