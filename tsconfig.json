@@ -5,7 +5,13 @@
     "paths": {
       "@shared/*": ["./src/shared/*"],
       "@api/*": ["./src/api/*"],
-      "@services/*": ["./src/domain/services/*"]
+      "@lib/*": ["./src/lib/*"],
+      "@services/*": ["./src/domain/services/*"],
+      "@presentation/*": ["./src/presentation/*"],
+      "@styles/*": ["./src/styles/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@helpers/*": ["./src/helpers/*"],
+      "@screens/*": ["./src/screens/*"]
     }
   }
 }
