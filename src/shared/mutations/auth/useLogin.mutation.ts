@@ -1,4 +1,4 @@
-import type { LoginService } from '@services/login.service';
+import type { LoginService } from '@services/auth/login.service';
 import type { LoginHttpParams } from '@shared/interfaces/http/login';
 import { useUserStore } from '@shared/store/user.store';
 import { useMutation } from '@tanstack/react-query';
