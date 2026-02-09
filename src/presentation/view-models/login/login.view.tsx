@@ -5,17 +5,18 @@ import type { useLoginModel } from './useLogin.model';
 import { InputController } from '@presentation/components/input-controller';
 import { colors } from '@styles/colors';
 import { Button } from '@presentation/components/button';
-import { Login } from '.';
+import { KeyboardContainer } from '@presentation/components/keyboard-container';
+import { AuthFormHeader } from '@presentation/components/auth-form-header';
 
 export const LoginView: FC<ReturnType<typeof useLoginModel>> = ({
   control,
   onSubmit,
 }) => {
   return (
-    <Login.KeyboardContainer>
+    <KeyboardContainer>
       <View className="flex-1 items-center justify-center px-[40px]">
         <View className="w-full flex-1 items-center justify-center">
-          <Login.Header
+          <AuthFormHeader
             title="Acesse sua conta"
             subtitle="Informe seu e-mail e senha para entrar"
           />
@@ -62,6 +63,6 @@ export const LoginView: FC<ReturnType<typeof useLoginModel>> = ({
           </Button>
         </View>
       </View>
-    </Login.KeyboardContainer>
+    </KeyboardContainer>
   );
 };

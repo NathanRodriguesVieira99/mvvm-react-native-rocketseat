@@ -6,7 +6,8 @@ import { router } from 'expo-router';
 import { colors } from '@styles/colors';
 import { Button } from '@presentation/components/button';
 import { Ionicons } from '@expo/vector-icons';
-import { Register } from '.';
+import { KeyboardContainer } from '@presentation/components/keyboard-container';
+import { AuthFormHeader } from '@presentation/components/auth-form-header';
 
 export const RegisterView: FC<ReturnType<typeof useRegisterModel>> = ({
   onSubmit,
@@ -15,9 +16,9 @@ export const RegisterView: FC<ReturnType<typeof useRegisterModel>> = ({
   avatarUri,
 }) => {
   return (
-    <Register.KeyboardContainer>
+    <KeyboardContainer>
       <ScrollView className="flex-1 px-[40px]">
-        <Register.Header
+        <AuthFormHeader
           title="Crie sua conta"
           subtitle="Informe os seus dados pessoais e de acesso"
         />
@@ -102,6 +103,6 @@ export const RegisterView: FC<ReturnType<typeof useRegisterModel>> = ({
           </Button>
         </View>
       </ScrollView>
-    </Register.KeyboardContainer>
+    </KeyboardContainer>
   );
 };
