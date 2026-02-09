@@ -1,9 +1,5 @@
-import { Text, View } from 'react-native';
+import Orders from '@screens/orders/page';
 
 export default function OrdersPage() {
-  return (
-    <View className="flex-1 items-center justify-center">
-      <Text>Orders</Text>
-    </View>
-  );
+  return <Orders />;
 }

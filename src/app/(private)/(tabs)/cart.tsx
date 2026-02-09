@@ -1,9 +1,5 @@
-import { Text, View } from 'react-native';
+import Cart from '@screens/cart/page';
 
 export default function CartPage() {
-  return (
-    <View className="flex-1 items-center justify-center">
-      <Text>Cart</Text>
-    </View>
-  );
+  return <Cart />;
 }
