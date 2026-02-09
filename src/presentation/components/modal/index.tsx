@@ -22,7 +22,7 @@ export const Modal = () => {
       onRequestClose={close}
     >
       <TouchableWithoutFeedback onPress={close}>
-        <View className="flex-1 bg-black/50 justify-center items-center px-6">
+        <View className="flex-1 items-center justify-center bg-black/50 px-6">
           <TouchableWithoutFeedback onPress={() => {}}>
             {content}
           </TouchableWithoutFeedback>

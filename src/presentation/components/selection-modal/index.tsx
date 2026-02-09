@@ -30,11 +30,11 @@ export const SelectionModal: FC<SelectionModalProps> = ({
     );
 
   return (
-    <View className="bg-white p-6 w-[85%] rounded-xl shadow-2xl mx-auto max-w-sm">
-      <View className="items-center ">
-        <Text className="text-lg text-gray-900 mb-3 font-bold ">{title}</Text>
+    <View className="mx-auto w-[85%] max-w-sm rounded-xl bg-white p-6 shadow-2xl">
+      <View className="items-center">
+        <Text className="mb-3 text-lg font-bold text-gray-900">{title}</Text>
         {message && (
-          <Text className="text-base text-gray-600 mb-6 leading-6">
+          <Text className="mb-6 text-base leading-6 text-gray-600">
             {message}
           </Text>
         )}

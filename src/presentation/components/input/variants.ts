@@ -21,7 +21,12 @@ export const inputVariants = tv({
         label: 'text-danger',
       },
     },
-    isDisabled: { true: { wrapper: 'opacity-50', input: 'text-gray-300' } },
+    isDisabled: {
+      true: {
+        wrapper: 'opacity-50',
+        input: 'text-gray-300',
+      },
+    },
   },
   defaultVariants: {
     isFocused: false,

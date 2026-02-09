@@ -1,14 +1,14 @@
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { registerSchema, type RegisterSchema } from './register.schema';
-import type { RegisterService } from '@services/register.service';
-import { useRegisterMutation } from '@shared/mutations/useRegister.mutation';
+import type { RegisterService } from '@services/auth/register.service';
+import { useRegisterMutation } from '@shared/mutations/auth/useRegister.mutation';
 import { useUserStore } from '@shared/store/user.store';
 import { useImage } from '@shared/hooks/useImage';
 import { useState } from 'react';
 import { CameraType } from 'expo-image-picker';
-import { useUploadAvatarMutation } from '@shared/mutations/useUploadAvatar.mutation';
-import type { UploadAvatarService } from '@services/uploadAvatar.service';
+import { useUploadAvatarMutation } from '@shared/mutations/auth/useUploadAvatar.mutation';
+import type { UploadAvatarService } from '@services/auth/uploadAvatar.service';
 
 type useRegisterModelProps = {
   registerService: RegisterService;

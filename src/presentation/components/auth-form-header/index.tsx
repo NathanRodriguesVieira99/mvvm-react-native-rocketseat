@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { Image, View } from 'react-native';
-import { Title } from './components/title';
-import { Subtitle } from './components/subtitle';
+import { Title } from './_components/title';
+import { Subtitle } from './_components/subtitle';
 
 interface AuthFormHeaderProps {
   title: string;
@@ -13,11 +13,11 @@ export const AuthFormHeader: FC<AuthFormHeaderProps> = ({
   subtitle,
 }) => {
   return (
-    <View className="items-center mb-8">
+    <View className="mb-8 items-center">
       <Image
         source={require('../../../assets/images/Logo.png')}
         resizeMode="contain"
-        className="w-[80px] h-[60px] mb-8"
+        className="mb-8 h-[60px] w-[80px]"
       />
       <Title title={title} />
       <Subtitle subtitle={subtitle} />

@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import type { BlurEvent, FocusEvent, TextInput } from 'react-native';
-import { colors } from '../../../styles/colors';
+import { colors } from '@styles/colors';
 
 interface useInputModelProps {
   isError?: boolean;
