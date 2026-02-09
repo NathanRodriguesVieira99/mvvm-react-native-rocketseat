@@ -1,4 +1,4 @@
-import { BottomSheet } from '@presentation/templates';
+import { BottomSheetTemplate } from '@presentation/components/bottom-sheet';
 import { useUserStore } from '@shared/store/user.store';
 import { Redirect, Stack } from 'expo-router';
 
@@ -14,7 +14,7 @@ export default function PrivateRootLayout() {
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
       </Stack>
-      <BottomSheet />
+      <BottomSheetTemplate />
     </>
   );
 }
