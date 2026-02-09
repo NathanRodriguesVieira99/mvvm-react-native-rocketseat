@@ -2,9 +2,9 @@ import { Text, View } from 'react-native';
 import { router } from 'expo-router';
 import type { FC } from 'react';
 import type { useLoginModel } from './useLogin.model';
-import { InputController } from '../../components/input-controller';
-import { colors } from '../../../styles/colors';
-import { Button } from '../../components/button';
+import { InputController } from '@presentation/components/input-controller';
+import { colors } from '@styles/colors';
+import { Button } from '@presentation/components/button';
 import { Login } from '.';
 
 export const LoginView: FC<ReturnType<typeof useLoginModel>> = ({
@@ -13,8 +13,8 @@ export const LoginView: FC<ReturnType<typeof useLoginModel>> = ({
 }) => {
   return (
     <Login.KeyboardContainer>
-      <View className="flex-1 px-[40px] items-center justify-center">
-        <View className="flex-1 w-full items-center justify-center">
+      <View className="flex-1 items-center justify-center px-[40px]">
+        <View className="w-full flex-1 items-center justify-center">
           <Login.Header
             title="Acesse sua conta"
             subtitle="Informe seu e-mail e senha para entrar"
@@ -50,7 +50,7 @@ export const LoginView: FC<ReturnType<typeof useLoginModel>> = ({
         </View>
 
         <View className="flex-2 pb-16">
-          <Text className="text-base text-gray-300 mb-6">
+          <Text className="mb-6 text-base text-gray-300">
             Ainda não tem uma conta?
           </Text>
           <Button
