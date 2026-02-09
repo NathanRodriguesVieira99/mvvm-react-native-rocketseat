@@ -1,1 +1,2 @@
 bunx lint-staged
+echo "pre-commit hook has been executed 🚀"
