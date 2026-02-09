@@ -16,7 +16,7 @@ export const KeyboardContainer: FC<KeyboardContainerProps> = ({ children }) => {
   return (
     <SafeAreaView className="flex-1">
       <KeyboardAvoidingView
-        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+        behavior={Platform.OS === 'ios' ? 'height' : 'height'}
         className="flex-1"
       >
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
