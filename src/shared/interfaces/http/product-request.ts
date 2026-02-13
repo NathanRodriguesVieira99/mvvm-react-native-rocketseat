@@ -4,12 +4,12 @@ interface Pagination {
 }
 
 interface Filters {
-  from: Date;
-  to: Date;
+  from?: Date;
+  to?: Date;
   categoryIds: number[];
-  searchText: string;
-  minValue: number;
-  maxValue: number;
+  searchText?: string;
+  minValue?: number;
+  maxValue?: number;
 }
 
 export interface GetProductsRequest {
