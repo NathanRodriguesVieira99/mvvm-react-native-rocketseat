@@ -1,11 +1,20 @@
-import { Ionicons } from '@expo/vector-icons';
-import { Input } from '@presentation/components/input';
-import { useBottomSheetStore } from '@shared/store/bottom-sheet.store';
-import { colors } from '@styles/colors';
+import type { FC } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+import { colors } from '@styles/colors';
+import { Input } from '@presentation/components/input';
 import { Filter } from '../filter';
+import { useBottomSheetStore } from '@shared/store/bottom-sheet.store';
 
-export const SearchInput = () => {
+interface SearchInputProps {
+  setSearchInputText: (text: string) => void;
+  value: string;
+}
+
+export const SearchInput: FC<SearchInputProps> = ({
+  setSearchInputText,
+  value,
+}) => {
   const open = useBottomSheetStore((s) => s.open);
 
   return (
@@ -14,6 +23,9 @@ export const SearchInput = () => {
       <View className="flex-row items-end justify-center gap-4">
         <View className="flex-1">
           <Input
+            placeholder="Pesquisar"
+            onChangeText={setSearchInputText}
+            value={value}
             leftIcon="search"
             returnKeyType="search"
             className="flex-1 text-lg"
