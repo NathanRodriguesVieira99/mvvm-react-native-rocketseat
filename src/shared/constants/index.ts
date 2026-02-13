@@ -10,6 +10,10 @@ export const ANDROID_API_BASE_URL = 'http://10.0.2.2:3001';
 export const PRODUCTS_INFINITY_QUERY_STALE_TIME = 1000 * 60 * 1; // 1 min
 export const PRODUCTS_CATEGORIES_QUERY_STALE_TIME = 1000 * 60 * 60; // 1 h
 
+export const DEBOUNCE_DELAY_IN_MILLISECONDS = 500; // meio segundo
+
+export const DEFAULT_PER_PAGE_VALUE = 10;
+
 export const QUERY_KEYS = {
   PRODUCTS: ['products'],
   PRODUCTS_CATEGORIES: ['products-categories'],
