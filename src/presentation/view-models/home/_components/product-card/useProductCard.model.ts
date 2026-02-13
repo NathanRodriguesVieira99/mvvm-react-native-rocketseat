@@ -5,5 +5,14 @@ interface useProductCardModelParams {
 }
 
 export const useProductCardModel = ({ product }: useProductCardModelParams) => {
-  return { product };
+  const formatProductName = (name: string) => {
+    if (name.length >= 17) {
+      return `${name.slice(0, 17)}...`;
+    }
+    return name;
+  };
+
+  const displayProductName = formatProductName(product.name);
+
+  return { product, displayProductName };
 };
