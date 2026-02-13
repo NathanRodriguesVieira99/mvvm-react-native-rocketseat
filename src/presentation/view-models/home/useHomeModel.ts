@@ -1,11 +1,20 @@
 import type { GetProductsService } from '@services/products/get-products.service';
+import { useDebounce } from '@shared/hooks/useDebounce';
 import { useProductsInfinityQuery } from '@shared/queries/products/useProducts.infinity-query';
+import { useFilterStore } from '@shared/store/filter.store';
+import { useState } from 'react';
 
 interface useHomeModelProps {
   getProductsService: GetProductsService;
 }
 
 export const useHomeModel = ({ getProductsService }: useHomeModelProps) => {
+  const [searchInputText, setSearchInputText] = useState('');
+
+  const currentSearchInputText = useDebounce(searchInputText);
+
+  const appliedFilterState = useFilterStore((s) => s.appliedFiltersState);
+
   const {
     products,
     error,
@@ -15,7 +24,10 @@ export const useHomeModel = ({ getProductsService }: useHomeModelProps) => {
     isLoading,
     refetch,
     isRefetching,
-  } = useProductsInfinityQuery(getProductsService);
+  } = useProductsInfinityQuery({
+    getProductsService,
+    filters: { ...appliedFilterState, searchText: currentSearchInputText },
+  });
 
   const handleLoadMore = () => {
     if (hasNextPage && !isFetchingNextPage && !isLoading) fetchNextPage();
@@ -29,7 +41,6 @@ export const useHomeModel = ({ getProductsService }: useHomeModelProps) => {
     handleLoadMore();
   };
 
-  console.log(JSON.stringify(products, null, 2));
   return {
     handleLoadMore,
     handleRefetch,
@@ -39,5 +50,7 @@ export const useHomeModel = ({ getProductsService }: useHomeModelProps) => {
     isFetchingNextPage,
     isRefetching,
     products,
+    searchInputText,
+    setSearchInputText,
   };
 };
