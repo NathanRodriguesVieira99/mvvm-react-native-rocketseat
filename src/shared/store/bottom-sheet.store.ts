@@ -39,6 +39,7 @@ export const useBottomSheetStore = create<BottomSheetStore>((set) => ({
       config: { ...defaultBottomSheetConfig, ...config },
       content,
     }),
+
   close: () =>
     set({
       ...initialStates,

@@ -42,8 +42,11 @@ export const useUserStore = create<UserStore>()(
           token: null,
           refreshToken: null,
         }),
+
       setSession: (sessionData) => set({ ...sessionData }),
+
       updateTokens: (updateTokensData) => set({ ...updateTokensData }),
+
       updateUser: (updatedUserData) =>
         set((state) => ({
           user: state.user ? { ...state.user, ...updatedUserData } : null,
