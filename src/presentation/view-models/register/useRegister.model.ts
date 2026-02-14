@@ -10,27 +10,17 @@ import { CameraType } from 'expo-image-picker';
 import { useUploadAvatarMutation } from '@shared/mutations/auth/useUploadAvatar.mutation';
 import type { UploadAvatarService } from '@services/auth/uploadAvatar.service';
 
-type useRegisterModelProps = {
+interface useRegisterModelProps {
   registerService: RegisterService;
   uploadAvatarService: UploadAvatarService;
-};
-
-interface InitialStates {
-  avatarUri: string | null;
 }
-
-const initialStates: InitialStates = {
-  avatarUri: null,
-};
 
 export const useRegisterModel = ({
   registerService,
   uploadAvatarService,
 }: useRegisterModelProps) => {
   const updateUser = useUserStore((state) => state.updateUser);
-  const [avatarUri, setAvatarUri] = useState<string | null>(
-    initialStates.avatarUri,
-  );
+  const [avatarUri, setAvatarUri] = useState<string | null>(null);
 
   const { handleSelectImage } = useImage({
     callback: setAvatarUri,
