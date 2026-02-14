@@ -3,13 +3,17 @@ import { Image, Text, TouchableOpacity, View } from 'react-native';
 import type { useProductCardModel } from './useProductCard.model';
 import { RatingCount } from '../rating-count';
 import { PriceText } from '@presentation/components/price-text';
+import { router } from 'expo-router';
 
 export const ProductCardView: FC<ReturnType<typeof useProductCardModel>> = ({
   product,
   displayProductName,
 }) => {
   return (
-    <TouchableOpacity className="mb-2 mt-5 h-[152px] w-[48%] overflow-hidden rounded-lg bg-white p-1 shadow-sm">
+    <TouchableOpacity
+      onPress={() => router.push(`/product/${product.id}`)}
+      className="mb-2 mt-5 h-[152px] w-[48%] overflow-hidden rounded-lg bg-white p-1 shadow-sm"
+    >
       <View>
         <Image
           source={{ uri: product.photo }}
