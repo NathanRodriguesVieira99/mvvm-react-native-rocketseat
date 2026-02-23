@@ -9,7 +9,6 @@ type UploadAvatarServiceContract = {
 export class UploadAvatarService implements UploadAvatarServiceContract {
   constructor(private readonly http: IHttpClient) {}
 
-  // assim que se cria funções dentro de classes com POO em TS
   private uploadAvatar = (avatarUri: string) => {
     const formData = new FormData();
 
