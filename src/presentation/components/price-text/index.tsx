@@ -3,8 +3,8 @@ import { PriceTextView } from './price-text.view';
 import { usePriceTextModel } from './usePriceText.model';
 
 interface PriceTextProps {
-  classNameCurrency?: string;
-  classNameValue?: string;
+  classNameCurrency?: string; // estilos para o R$
+  classNameValue?: string; // estilos para o valor em si
   value: number;
 }
 
