@@ -13,8 +13,11 @@ export const PRODUCTS_CATEGORIES_QUERY_STALE_TIME = 1000 * 60 * 60; // 1 h
 export const DEBOUNCE_DELAY_IN_MILLISECONDS = 500; // meio segundo
 
 export const DEFAULT_PER_PAGE_VALUE = 10;
+export const COMMENTS_PER_PAGE = 20;
 
 export const QUERY_KEYS = {
   PRODUCTS: ['products'],
   PRODUCTS_CATEGORIES: ['products-categories'],
+  PRODUCT_DETAILS: ['product-details'],
+  PRODUCT_COMMENTS: ['product-comments'],
 };
