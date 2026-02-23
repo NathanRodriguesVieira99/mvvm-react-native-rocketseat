@@ -22,7 +22,7 @@ export const PriceTextView: FC<
       >
         {currencySymbol}
       </Text>
-      <Text className={classNameValue ?? 'text-2xl text-gray-900'}>
+      <Text className={classNameValue ?? 'text-2xl font-bold text-gray-900'}>
         {valueText}
       </Text>
     </View>
