@@ -1,7 +1,7 @@
 import { HttpMethod, type IHttpClient } from '@api/http-client.types';
 
-import type { AuthResponse } from '@shared/interfaces/http/auth-response';
-import type { RegisterHttpParams } from '@shared/interfaces/http/register';
+import type { AuthResponse } from '@interfaces/http/auth-response';
+import type { RegisterHttpParams } from '@interfaces/http/register';
 
 export type RegisterServiceContract = {
   exec: (data: RegisterHttpParams) => Promise<AuthResponse>;

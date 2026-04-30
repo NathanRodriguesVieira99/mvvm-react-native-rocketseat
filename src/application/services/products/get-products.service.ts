@@ -1,8 +1,8 @@
 import { HttpMethod, type IHttpClient } from '@api/http-client.types';
 
-import type { GetProductsRequest } from '@shared/interfaces/http/product-request';
-import type { PaginationResponse } from '@shared/interfaces/pagination-response';
-import type { Product } from '@shared/interfaces/product';
+import type { GetProductsRequest } from '@interfaces/http/product-request';
+import type { PaginationResponse } from '@interfaces/pagination-response';
+import type { Product } from '@interfaces/product';
 
 interface GetProductsServiceContract {
   exec: (data: GetProductsRequest) => Promise<PaginationResponse<Product>>;

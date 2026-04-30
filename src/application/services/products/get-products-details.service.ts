@@ -1,6 +1,6 @@
 import { HttpMethod, type IHttpClient } from '@api/http-client.types';
 
-import type { Product } from '@shared/interfaces/product';
+import type { Product } from '@interfaces/product';
 
 interface GetProductDetailsContract {
   exec: (id: number) => Promise<Product>;

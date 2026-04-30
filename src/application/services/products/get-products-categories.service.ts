@@ -1,6 +1,6 @@
 import { HttpMethod, type IHttpClient } from '@api/http-client.types';
 
-import type { ProductCategory } from '@shared/interfaces/product';
+import type { ProductCategory } from '@interfaces/product';
 
 interface GetProductsCategoryServiceContract {
   exec: () => Promise<ProductCategory[]>;

@@ -1,7 +1,7 @@
 import { BASE_URL } from '@api/http-client';
 import { HttpMethod, type IHttpClient } from '@api/http-client.types';
 
-import type { UploadAvatarResponse } from '@shared/interfaces/http/upload-avatar';
+import type { UploadAvatarResponse } from '@interfaces/http/upload-avatar';
 
 type UploadAvatarServiceContract = {
   exec: (avatarUri: string) => Promise<UploadAvatarResponse>;
