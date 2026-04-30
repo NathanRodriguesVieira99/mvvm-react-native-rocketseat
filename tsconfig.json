@@ -6,12 +6,12 @@
       "@shared/*": ["./src/shared/*"],
       "@api/*": ["./src/api/*"],
       "@lib/*": ["./src/lib/*"],
-      "@services/*": ["./src/domain/services/*"],
+      "@services/*": ["./src/application/services/*"],
       "@presentation/*": ["./src/presentation/*"],
       "@styles/*": ["./src/styles/*"],
       "@assets/*": ["./src/assets/*"],
       "@helpers/*": ["./src/helpers/*"],
-      "@screens/*": ["./src/screens/*"]
+      "@screens/*": ["./src/presentation/screens/*"]
     }
   }
 }
