@@ -1,5 +1,5 @@
 import type { GetProductsService } from '@services/products/get-products.service';
-import { useDebounce } from '@shared/hooks/useDebounce';
+import { useDebounce } from '@hooks/useDebounce';
 import { useProductsInfinityQuery } from '@queries/products/useProducts.infinity-query';
 import { useFilterStore } from '@stores/filter.store';
 import { useState } from 'react';

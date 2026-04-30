@@ -4,7 +4,7 @@ import { registerSchema, type RegisterSchema } from './register.schema';
 import type { RegisterService } from '@services/auth/register.service';
 import { useRegisterMutation } from '@mutations/auth/useRegister.mutation';
 import { useUserStore } from '@stores/user.store';
-import { useImage } from '@shared/hooks/useImage';
+import { useImage } from '@hooks/useImage';
 import { useState } from 'react';
 import { CameraType } from 'expo-image-picker';
 import { useUploadAvatarMutation } from '@mutations/auth/useUploadAvatar.mutation';

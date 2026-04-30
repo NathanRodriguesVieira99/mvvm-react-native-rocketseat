@@ -1,4 +1,4 @@
-import type { Product } from '@shared/interfaces/product';
+import type { Product } from '@interfaces/product';
 
 interface useProductCardModelParams {
   product: Product;
