@@ -2,6 +2,7 @@ import type { GetProductCommentsService } from '@services/products/get-product-c
 import type { GetProductDetailsService } from '@services/products/get-products-details.service';
 import { useProductCommentsInfinityQuery } from '@shared/queries/products/useProductComments.infinity-query';
 import { useProductDetails } from '@shared/queries/products/useProductDetails.query';
+import { useCartStore } from '@shared/store/cart.store';
 
 interface useProductModelProps {
   productId: number;
@@ -34,6 +35,8 @@ export const useProductModel = ({
     productId,
   });
 
+  const addProduct = useCartStore((s) => s.addProduct);
+
   const handleLoadMore = () => {
     if (hasNextPage && !isFetchingNextPage) fetchNextPage();
   };
@@ -43,6 +46,16 @@ export const useProductModel = ({
   };
 
   const handleEndReached = () => handleLoadMore();
+
+  const handleAddToCart = () => {
+    if (!productDetails) return;
+    addProduct({
+      id: productDetails.id,
+      name: productDetails.name,
+      price: productDetails.value,
+      image: productDetails.photo,
+    });
+  };
 
   return {
     productDetails,
@@ -56,5 +69,6 @@ export const useProductModel = ({
     handleLoadMore,
     handleRefetch,
     handleEndReached,
+    handleAddToCart,
   };
 };

@@ -22,6 +22,7 @@ export const ProductView: FC<ReturnType<typeof useProductModel>> = ({
   handleEndReached,
   isRefetching,
   isFetchingNextPage,
+  handleAddToCart,
 }) => {
   if (productDetailsError) return <Error />;
   if (isProductDetailsLoading || !productDetails) return <Loading />;
@@ -42,7 +43,7 @@ export const ProductView: FC<ReturnType<typeof useProductModel>> = ({
         }
         contentContainerClassName="pb-6"
       />
-      <AddToCart product={productDetails} />
+      <AddToCart product={productDetails} handleAddToCart={handleAddToCart} />
     </SafeAreaView>
   );
 };

@@ -1,6 +1,6 @@
 import { HttpClient } from '@api/http-client';
-import { LoginView } from '@presentation/view-models/login/login.view';
-import { useLoginModel } from '@presentation/view-models/login/useLogin.model';
+import { LoginView } from '@presentation/screens/login/login.view';
+import { useLoginModel } from '@presentation/screens/login/useLogin.model';
 import { LoginService } from '@services/auth/login.service';
 
 export default function LoginPage() {

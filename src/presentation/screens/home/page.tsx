@@ -1,6 +1,6 @@
 import { HttpClient } from '@api/http-client';
-import { HomeView } from '@presentation/view-models/home/home.view';
-import { useHomeModel } from '@presentation/view-models/home/useHomeModel';
+import { HomeView } from '@presentation/screens/home/home.view';
+import { useHomeModel } from '@presentation/screens/home/useHomeModel';
 import { GetProductsService } from '@services/products/get-products.service';
 
 export default function Home() {

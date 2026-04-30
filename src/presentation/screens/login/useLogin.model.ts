@@ -17,7 +17,7 @@ export const useLoginModel = ({ loginService }: useLoginModelProps) => {
   const { mutateAsync: userLoginMutation } = useLoginMutation(loginService);
 
   const onSubmit = handleSubmit(async (data) => {
-    const mutationResponse = await userLoginMutation(data);
+    await userLoginMutation(data);
   });
 
   return { control, onSubmit };

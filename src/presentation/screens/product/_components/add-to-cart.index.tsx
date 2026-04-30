@@ -6,16 +6,21 @@ import { View } from 'react-native';
 
 interface AddToCartProps {
   product: Product;
+  handleAddToCart: () => void;
 }
 
-export const AddToCart: FC<AddToCartProps> = ({ product }) => {
+export const AddToCart: FC<AddToCartProps> = ({ product, handleAddToCart }) => {
   return (
     <View className="fixed bottom-0 left-0 right-0 h-24 flex-row items-center bg-white px-6 pb-8">
       <View className="flex-1">
         <PriceText value={Number(product.value)} />
       </View>
 
-      <Button leftIcon="cart-outline" className="w-[120px] gap-2">
+      <Button
+        leftIcon="cart-outline"
+        className="w-[120px] gap-2"
+        onPress={handleAddToCart}
+      >
         Adicionar
       </Button>
     </View>
