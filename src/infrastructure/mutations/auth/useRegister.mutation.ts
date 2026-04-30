@@ -1,5 +1,5 @@
 import type { RegisterService } from '@services/auth/register.service';
-import type { RegisterHttpParams } from '@shared/interfaces/http/register';
+import type { RegisterHttpParams } from '@interfaces/http/register';
 import { useUserStore } from '../../store/user.store';
 import { useMutation } from '@tanstack/react-query';
 
