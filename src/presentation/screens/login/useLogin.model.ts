@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form';
 import { loginSchema, type LoginSchema } from './login.schema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { LoginService } from '@services/auth/login.service';
-import { useLoginMutation } from '@shared/mutations/auth/useLogin.mutation';
+import { useLoginMutation } from '@mutations/auth/useLogin.mutation';
 
 type useLoginModelProps = {
   loginService: LoginService;

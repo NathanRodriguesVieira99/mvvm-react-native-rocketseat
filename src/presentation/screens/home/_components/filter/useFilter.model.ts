@@ -1,7 +1,7 @@
 import type { GetProductsCategoriesService } from '@services/products/get-products-categories.service';
-import { useProductsCategoriesQuery } from '@shared/queries/products/useProductsCategories.query';
-import { useBottomSheetStore } from '@shared/store/bottom-sheet.store';
-import { useFilterStore } from '@shared/store/filter.store';
+import { useProductsCategoriesQuery } from '@queries/products/useProductsCategories.query';
+import { useBottomSheetStore } from '@stores/bottom-sheet.store';
+import { useFilterStore } from '@stores/filter.store';
 
 interface useFilterModelProps {
   getProductsCategoriesService: GetProductsCategoriesService;

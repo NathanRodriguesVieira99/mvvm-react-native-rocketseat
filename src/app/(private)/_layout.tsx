@@ -1,5 +1,5 @@
 import { BottomSheetTemplate } from '@presentation/components/bottom-sheet';
-import { useUserStore } from '@shared/store/user.store';
+import { useUserStore } from '@stores/user.store';
 import { Redirect, Stack } from 'expo-router';
 
 export default function PrivateRootLayout() {

@@ -1,6 +1,6 @@
 import { Ionicons } from '@expo/vector-icons';
 import type { ProductComment } from '@shared/interfaces/product-comment';
-import { useUserStore } from '@shared/store/user.store';
+import { useUserStore } from '@stores/user.store';
 import { colors } from '@styles/colors';
 import type { FC } from 'react';
 import { Image, Text, View } from 'react-native';

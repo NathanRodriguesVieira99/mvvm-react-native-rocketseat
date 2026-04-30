@@ -3,7 +3,7 @@ import BottomSheet, {
   BottomSheetBackdropProps,
   BottomSheetScrollView,
 } from '@gorhom/bottom-sheet';
-import { useBottomSheetStore } from '@shared/store/bottom-sheet.store';
+import { useBottomSheetStore } from '@stores/bottom-sheet.store';
 import { colors } from '@styles/colors';
 import { useCallback, useEffect, useMemo, useRef } from 'react';
 

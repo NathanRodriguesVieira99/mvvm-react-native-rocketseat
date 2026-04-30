@@ -1,5 +1,5 @@
 import { Ionicons } from '@expo/vector-icons';
-import { useUserStore } from '@shared/store/user.store';
+import { useUserStore } from '@stores/user.store';
 import { colors } from '@styles/colors';
 import { Image, Text, TouchableOpacity, View } from 'react-native';
 

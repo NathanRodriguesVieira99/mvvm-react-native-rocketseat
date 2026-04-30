@@ -4,7 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { colors } from '@styles/colors';
 import { Input } from '@presentation/components/input';
 import { Filter } from '../filter';
-import { useBottomSheetStore } from '@shared/store/bottom-sheet.store';
+import { useBottomSheetStore } from '@stores/bottom-sheet.store';
 
 interface SearchInputProps {
   setSearchInputText: (text: string) => void;

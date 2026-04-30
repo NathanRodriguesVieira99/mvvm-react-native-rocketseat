@@ -1,4 +1,4 @@
-import { useModalStore } from '@shared/store/modal.store';
+import { useModalStore } from '@stores/modal.store';
 import {
   Modal as ModalComponent,
   TouchableWithoutFeedback,

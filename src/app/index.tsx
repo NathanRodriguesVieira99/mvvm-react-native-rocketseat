@@ -1,4 +1,4 @@
-import { useUserStore } from '@shared/store/user.store';
+import { useUserStore } from '@stores/user.store';
 import { Redirect } from 'expo-router';
 
 export default function App() {

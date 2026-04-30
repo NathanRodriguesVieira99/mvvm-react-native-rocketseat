@@ -1,8 +1,8 @@
 import type { GetProductCommentsService } from '@services/products/get-product-comments.service';
 import type { GetProductDetailsService } from '@services/products/get-products-details.service';
-import { useProductCommentsInfinityQuery } from '@shared/queries/products/useProductComments.infinity-query';
-import { useProductDetails } from '@shared/queries/products/useProductDetails.query';
-import { useCartStore } from '@shared/store/cart.store';
+import { useProductCommentsInfinityQuery } from '@queries/products/useProductComments.infinity-query';
+import { useProductDetails } from '@queries/products/useProductDetails.query';
+import { useCartStore } from '@stores/cart.store';
 
 interface useProductModelProps {
   productId: number;
