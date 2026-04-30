@@ -15,7 +15,7 @@ export const AuthFormHeader: FC<AuthFormHeaderProps> = ({
   return (
     <View className="mb-8 items-center">
       <Image
-        source={require('../../../assets/images/Logo.png')}
+        source={require('../../assets/images/Logo.png')}
         resizeMode="contain"
         className="mb-8 h-[60px] w-[80px]"
       />
