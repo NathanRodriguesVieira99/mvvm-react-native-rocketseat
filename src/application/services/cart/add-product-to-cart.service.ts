@@ -1,7 +1,7 @@
 import type {
   CartProduct,
   OmittedCartProductQuantity,
-} from '@shared/store/cart.store';
+} from '@stores/cart.store';
 import { findExistingProductService } from './find-existing-product.service';
 import { calculateTotalService } from './calculate-total.service';
 

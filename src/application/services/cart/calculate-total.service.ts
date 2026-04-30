@@ -1,4 +1,4 @@
-import type { CartProduct } from '@shared/store/cart.store';
+import type { CartProduct } from '@stores/cart.store';
 
 interface CalculateTotalServiceContract {
   calculate: (productList: CartProduct[]) => number;

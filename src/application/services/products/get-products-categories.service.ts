@@ -1,4 +1,5 @@
 import { HttpMethod, type IHttpClient } from '@api/http-client.types';
+
 import type { ProductCategory } from '@shared/interfaces/product';
 
 interface GetProductsCategoryServiceContract {

@@ -1,4 +1,5 @@
 import { HttpMethod, type IHttpClient } from '@api/http-client.types';
+
 import type { AuthResponse } from '@shared/interfaces/http/auth-response';
 import type { LoginHttpParams } from '@shared/interfaces/http/login';
 

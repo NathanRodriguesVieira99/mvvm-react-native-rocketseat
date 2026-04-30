@@ -1,4 +1,5 @@
 import { HttpMethod, type IHttpClient } from '@api/http-client.types';
+
 import type { GetProductsRequest } from '@shared/interfaces/http/product-request';
 import type { PaginationResponse } from '@shared/interfaces/pagination-response';
 import type { Product } from '@shared/interfaces/product';

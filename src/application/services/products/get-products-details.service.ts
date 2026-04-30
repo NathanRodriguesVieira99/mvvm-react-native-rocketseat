@@ -1,4 +1,5 @@
-import { HttpMethod, IHttpClient } from '@api/http-client.types';
+import { HttpMethod, type IHttpClient } from '@api/http-client.types';
+
 import type { Product } from '@shared/interfaces/product';
 
 interface GetProductDetailsContract {

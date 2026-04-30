@@ -1,5 +1,6 @@
 import { BASE_URL } from '@api/http-client';
 import { HttpMethod, type IHttpClient } from '@api/http-client.types';
+
 import type { UploadAvatarResponse } from '@shared/interfaces/http/upload-avatar';
 
 type UploadAvatarServiceContract = {
