@@ -1,10 +1,10 @@
-import { Ionicons } from '@expo/vector-icons';
-import { useModalStore } from '@shared/store/modal.store';
-import { createElement } from 'react';
 import {
   SelectionModal,
   type SelectionModalProps,
-} from '../../presentation/components/selection-modal';
+} from '@presentation/components/selection-modal';
+import { createElement } from 'react';
+import { Ionicons } from '@expo/vector-icons';
+import { useModalStore } from '../../infrastructure/store/modal.store';
 
 export type SelectionVariants = 'primary' | 'secondary' | 'danger';
 

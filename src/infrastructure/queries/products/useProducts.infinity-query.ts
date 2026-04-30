@@ -6,7 +6,7 @@ import {
 } from '@shared/constants';
 import { useInfiniteQuery } from '@tanstack/react-query';
 import { BuildImageUrl } from '@helpers/build-image-url';
-import type { FilterStates } from '@shared/store/filter.store';
+import type { FilterStates } from '../../store/filter.store';
 
 interface ProductsInfinityQueryParams {
   getProductsService: GetProductsService;
