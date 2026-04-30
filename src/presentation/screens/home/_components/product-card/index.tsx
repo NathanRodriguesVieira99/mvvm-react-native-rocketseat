@@ -1,4 +1,4 @@
-import type { Product } from '@shared/interfaces/product';
+import type { Product } from '@interfaces/product';
 import type { FC } from 'react';
 import { ProductCardView } from './product-card.view';
 import { useProductCardModel } from './useProductCard.model';
