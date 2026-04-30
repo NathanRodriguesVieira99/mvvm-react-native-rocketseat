@@ -1,7 +1,7 @@
 import { BuildImageUrl } from '@helpers/build-image-url';
 import type { GetProductCommentsService } from '@services/products/get-product-comments.service';
 import { COMMENTS_PER_PAGE, QUERY_KEYS } from '@shared/constants';
-import type { ProductComment } from '@shared/interfaces/product-comment';
+import type { ProductComment } from '@interfaces/product-comment';
 import { useInfiniteQuery } from '@tanstack/react-query';
 
 interface ProductCommentsInfinityQueryParams {
