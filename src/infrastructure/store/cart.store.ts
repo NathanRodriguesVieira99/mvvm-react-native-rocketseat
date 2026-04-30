@@ -1,8 +1,12 @@
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
+
 import AsyncStorage from '@react-native-async-storage/async-storage';
+
 import { addProductToCartService } from '@services/cart/add-product-to-cart.service';
 import { removeProductFromListService } from '@services/cart/remove-product-from-list.service';
+import { UpdateProductQuantityService } from '@services/cart/update-product-quantity.service';
+import { GetItemCountService } from '@services/cart/get-item-count.service';
 
 export interface CartProduct {
   id: number;
@@ -39,11 +43,22 @@ export const useCartStore = create<CartStore>()(
         set((s) =>
           addProductToCartService.addProductToCart(s.products, newProduct),
         ),
+
       clearCart: () => set({ products: [], total: 0 }),
-      getItemCount: () => 0,
+
+      getItemCount: () => GetItemCountService.getItemCount(get().products),
+
       removeProduct: (productId) =>
         set((s) => removeProductFromListService.remove(s.products, productId)),
-      updateQuantity: () => set({}),
+
+      updateQuantity: ({ productId, quantity }) =>
+        set((s) =>
+          UpdateProductQuantityService.update({
+            productId,
+            quantity,
+            productList: s.products,
+          }),
+        ),
     }),
     {
       name: 'marketplace-cart',
