@@ -1,9 +1,10 @@
+import { findExistingProductService } from './find-existing-product.service';
+import { calculateTotalService } from './calculate-total.service';
+
 import type {
   CartProduct,
   OmittedCartProductQuantity,
 } from '@stores/cart.store';
-import { findExistingProductService } from './find-existing-product.service';
-import { calculateTotalService } from './calculate-total.service';
 
 type AddProductToCartResponse = {
   products: CartProduct[];
@@ -37,15 +38,14 @@ export const addProductToCartService: AddProductToCartServiceContract = {
       });
 
       const total = calculateTotalService.calculate(products);
+
+      return { products, total };
     }
 
     const products = [...productList, { ...newProduct, quantity: 1 }];
 
     const total = calculateTotalService.calculate(products);
 
-    return {
-      products: products,
-      total,
-    };
+    return { products, total };
   },
 };
