@@ -5,7 +5,9 @@
     "paths": {
       "@shared/*": ["./src/shared/*"],
       "@api/*": ["./src/infrastructure/http/*"],
+      "@hooks/*": ["./src/infrastructure/hooks/*"],
       "@lib/*": ["./src/lib/*"],
+      "@interfaces/*": ["./src/domain/interfaces/*"],
       "@stores/*": ["./src/infrastructure/store/*"],
       "@services/*": ["./src/application/services/*"],
       "@presentation/*": ["./src/presentation/*"],
