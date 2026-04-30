@@ -1,9 +1,6 @@
 import { Ionicons } from '@expo/vector-icons';
 import { clsx } from 'clsx';
-import type {
-  SelectionOptions,
-  SelectionVariants,
-} from '@shared/hooks/useModal';
+import type { SelectionOptions, SelectionVariants } from '@hooks/useModal';
 import type { FC } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 import { colors } from '../../../styles/colors';

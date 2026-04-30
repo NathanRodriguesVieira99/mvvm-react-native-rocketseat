@@ -1,7 +1,7 @@
 import { Ionicons } from '@expo/vector-icons';
 import { BuildImageUrl } from '@helpers/build-image-url';
 import { PriceText } from '@presentation/components/price-text';
-import type { Product } from '@shared/interfaces/product';
+import type { Product } from '@interfaces/product';
 import { colors } from '@styles/colors';
 import { router } from 'expo-router';
 import type { FC } from 'react';

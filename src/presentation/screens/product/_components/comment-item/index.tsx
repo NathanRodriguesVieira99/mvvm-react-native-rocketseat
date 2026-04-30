@@ -1,5 +1,5 @@
 import { Ionicons } from '@expo/vector-icons';
-import type { ProductComment } from '@shared/interfaces/product-comment';
+import type { ProductComment } from '@interfaces/product-comment';
 import { useUserStore } from '@stores/user.store';
 import { colors } from '@styles/colors';
 import type { FC } from 'react';

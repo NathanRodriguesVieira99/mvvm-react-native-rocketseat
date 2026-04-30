@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import { Text, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { colors } from '@styles/colors';
-import type { Product } from '@shared/interfaces/product';
+import type { Product } from '@interfaces/product';
 
 interface RatingCountProps {
   product: Product;
