@@ -1,4 +1,4 @@
-import type { User } from '@shared/interfaces/user';
+import type { User } from '@interfaces/user';
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import AsyncStorage from '@react-native-async-storage/async-storage';
