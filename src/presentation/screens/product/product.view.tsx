@@ -8,7 +8,7 @@ import { ListFooter } from './_components/list-footer';
 import { EmptyList } from './_components/empty-list';
 import { Loading } from './_components/loading';
 import { Error } from './_components/error';
-import { AddToCart } from './_components/add-to-cart.index';
+import { AddToCart } from './_components';
 
 export const ProductView: FC<ReturnType<typeof useProductModel>> = ({
   productDetails,

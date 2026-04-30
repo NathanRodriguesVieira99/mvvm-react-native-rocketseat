@@ -1,6 +1,6 @@
 import { Button } from '@presentation/components/button';
 import { PriceText } from '@presentation/components/price-text';
-import type { Product } from '@shared/interfaces/product';
+import type { Product } from '@interfaces/product';
 import type { FC } from 'react';
 import { View } from 'react-native';
 
