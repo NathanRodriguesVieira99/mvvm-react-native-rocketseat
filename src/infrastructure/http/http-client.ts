@@ -1,12 +1,7 @@
 import axios, { type AxiosError, type AxiosInstance } from 'axios';
 import { Platform } from 'react-native';
-import {
-  ANDROID_API_BASE_URL,
-  INTERNAL_SERVER_ERROR,
-  IOS_API_BASE_URL,
-  UNAUTHORIZED_ERROR,
-} from '@shared/constants';
-import type { HttpRequest, IHttpClient } from './http-client.types';
+import { ANDROID_API_BASE_URL, IOS_API_BASE_URL } from '@shared/constants';
+import { HttpRequest, IHttpClient, HttpStatusCode } from './http-client.types';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useUserStore } from '../store/user.store';
 
@@ -65,7 +60,7 @@ export class HttpClient implements IHttpClient {
 
         // se der erro 401 ou o token estiver expirado
         if (
-          error.response?.status === UNAUTHORIZED_ERROR &&
+          error.response?.status === HttpStatusCode.UNAUTHORIZED &&
           error.response?.data?.message === 'Token expirado' &&
           !this.isRefreshing
         ) {
@@ -141,9 +136,12 @@ export class HttpClient implements IHttpClient {
   }
 
   // client  HTTP responsável pelas requisições ao backend
-  async request<TResponse, TBody = unknown>(props: HttpRequest<TBody>) {
-    const { endpoint, method, body, headers } = props;
-
+  async request<TResponse, TBody = unknown>({
+    endpoint,
+    method,
+    body,
+    headers,
+  }: HttpRequest<TBody>) {
     try {
       const { data } = await this.api.request<TResponse>({
         url: endpoint, // BASE_URL já vem por padrão (pelo this.api), passa apenas os endpoints
@@ -160,7 +158,8 @@ export class HttpClient implements IHttpClient {
         response: error.response,
         config: error.config,
       });
-      const status = error.response?.status || INTERNAL_SERVER_ERROR;
+      const status =
+        error.response?.status || HttpStatusCode.INTERNAL_SERVER_ERROR;
       const message = error.response?.data || error.message;
       throw new Error(`Request failed with status ${status}: ${message}`);
     }
